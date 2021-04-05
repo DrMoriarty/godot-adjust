@@ -1,0 +1,17 @@
+[config]
+name="Adjust"
+binary="adjust.xcframework"
+
+initialization="register_adjust_types"
+deinitialization="unregister_adjust_types"
+
+[dependencies]
+linked=["./AdjustSdk.framework"]
+embedded=[]
+system=["AdSupport.framework", "iAd.framework", "AdServices.framework", "CoreTelephony.framework", "StoreKit.framework", "AppTrackingTransparency.framework"]
+
+capabilities=[]
+
+files=[]
+
+[plist]
