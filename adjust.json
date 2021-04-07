@@ -2,7 +2,7 @@
   "name": "adjust",
   "display_name": "Adjust SDK",
   "description": "Adjust: attribution, analytics, fraud prevention",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "url": "https://github.com/DrMoriarty/godot-adjust",
   "category": "misc",

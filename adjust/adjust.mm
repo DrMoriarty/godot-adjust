@@ -29,7 +29,8 @@ void AdjustSdk::init(String token, bool production) {
     NSString *environment = production ? ADJEnvironmentProduction : ADJEnvironmentSandbox;
     ADJConfig *adjustConfig = [ADJConfig configWithAppToken:appToken
                                                 environment:environment
-                                      allowSuppressLogLevel:YES];
+                                      allowSuppressLogLevel:NO];
+    adjustConfig.logLevel = production ? ADJLogLevelError : ADJLogLevelVerbose;
     [Adjust appDidLaunch:adjustConfig];
 }
 
