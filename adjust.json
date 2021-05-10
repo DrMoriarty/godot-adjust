@@ -2,11 +2,11 @@
   "name": "adjust",
   "display_name": "Adjust SDK",
   "description": "Adjust: attribution, analytics, fraud prevention",
-  "version": "0.1.1",
+  "version": "4.29.0",
   "license": "MIT",
   "url": "https://github.com/DrMoriarty/godot-adjust",
   "category": "misc",
-  "godot_version": "3.2.4",
+  "godot_version": "3.3.0",
   "author": {
     "name": "DrMoriarty",
     "url": "https://github.com/DrMoriarty",
@@ -24,6 +24,7 @@
     "adjust": "*res://scripts/adjust.gd"
   },
   "platform_ios": {
+    "dependencies": ["ios-att"],
     "files": {
       "bin/adjust.debug.xcframework": "ios/plugins/adjust/adjust.debug.xcframework",
       "bin/adjust.release.xcframework": "ios/plugins/adjust/adjust.release.xcframework",
