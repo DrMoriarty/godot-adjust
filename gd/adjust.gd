@@ -3,8 +3,8 @@ extends Node
 var _adjust = null
 
 func _ready():
-    if Engine.has_singleton("Adjust"):
-        _adjust = Engine.get_singleton("Adjust")
+    if Engine.has_singleton("GodotAdjust"):
+        _adjust = Engine.get_singleton("GodotAdjust")
     else:
         push_warning('Adjust plugin not found!')
     if ProjectSettings.has_setting('Adjust/AppToken'):
