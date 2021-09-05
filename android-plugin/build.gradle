@@ -33,7 +33,7 @@ android {
     // Used to customize the name of generated AAR file.
     libraryVariants.all { variant ->
         variant.outputs.all { output ->
-            output.outputFileName = "Adjust.${variant.name}.aar"
+            output.outputFileName = "GodotAdjust.${variant.name}.aar"
         }
     }
 

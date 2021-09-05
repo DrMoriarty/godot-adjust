@@ -1,8 +1,8 @@
 [config]
 
-name="AppsFlyer"
+name="GodotAdjust"
 binary_type="local"
-binary="AppsFlyer.release.aar"
+binary="GodotAdjust.release.aar"
 
 [dependencies]
 

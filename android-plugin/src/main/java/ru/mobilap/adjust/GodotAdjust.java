@@ -23,18 +23,18 @@ import org.godotengine.godot.GodotLib;
 import org.godotengine.godot.plugin.GodotPlugin;
 import org.godotengine.godot.plugin.SignalInfo;
 
-public class Adjust extends GodotPlugin {
+public class GodotAdjust extends GodotPlugin {
 
-    private final String TAG = Adjust.class.getName();
+    private final String TAG = GodotAdjust.class.getName();
 
-    public Adjust(Godot godot) 
+    public GodotAdjust(Godot godot) 
     {
         super(godot);
     }
 
     @Override
     public String getPluginName() {
-        return "Adjust";
+        return "GodotAdjust";
     }
 
     @Override

@@ -11,8 +11,8 @@
     initializer.
     -->
     <meta-data
-        android:name="org.godotengine.plugin.v1.AppsFlyer"
-        android:value="ru.mobilap.appsflyer.AppsFlyer" />
+        android:name="org.godotengine.plugin.v1.GodotAdjust"
+        android:value="ru.mobilap.adjust.GodotAdjust" />
 
     <receiver
         android:name="com.adjust.sdk.AdjustReferrerReceiver"
