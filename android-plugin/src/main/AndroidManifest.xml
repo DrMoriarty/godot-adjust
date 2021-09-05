@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ru.mobilap.appsflyer">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ru.mobilap.adjust">
 
   <application>
     <!--
