@@ -34,8 +34,8 @@
   },
   "platform_android": {
     "files": {
-      "android-plugin/Afjust.gdap": "android/plugins/",
-      "android-plugin/build/outputs/aar/Adjust.release.aar": "android/plugins/"
+      "android-plugin/GodotAdjust.gdap": "android/plugins/",
+      "android-plugin/build/outputs/aar/GodotAdjust.release.aar": "android/plugins/"
     }
   }
 }
