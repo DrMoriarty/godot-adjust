@@ -31,5 +31,11 @@
       "adjust/adjust.gdip": "ios/plugins/adjust/",
       "adjust/AdjustSdk.framework": "ios/plugins/adjust/AdjustSdk.framework"
     }
+  },
+  "platform_android": {
+    "files": {
+      "android-plugin/Afjust.gdap": "android/plugins/",
+      "android-plugin/build/outputs/aar/Adjust.release.aar": "android/plugins/"
+    }
   }
 }

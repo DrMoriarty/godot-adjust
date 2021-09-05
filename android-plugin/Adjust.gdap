@@ -1,0 +1,11 @@
+[config]
+
+name="AppsFlyer"
+binary_type="local"
+binary="AppsFlyer.release.aar"
+
+[dependencies]
+
+local=[]
+remote=["com.adjust.sdk:adjust-android:4.28.2"]
+custom_maven_repos=["https://dl.bintray.com/mobilap/maven/"]
