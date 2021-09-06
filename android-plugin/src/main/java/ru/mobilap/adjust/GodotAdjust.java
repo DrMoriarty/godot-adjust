@@ -18,6 +18,7 @@ import android.app.Application.ActivityLifecycleCallbacks;
 import androidx.annotation.NonNull;
 
 import com.adjust.sdk.Adjust;
+import com.adjust.sdk.AdjustEvent;
 import com.adjust.sdk.AdjustConfig;
 import com.adjust.sdk.LogLevel;
 
@@ -45,7 +46,9 @@ public class GodotAdjust extends GodotPlugin {
     @Override
     public List<String> getPluginMethods() {
         return Arrays.asList(
-                "init"
+                "init",
+                "track_event",
+                "track_revenue"
         );
     }
 
@@ -58,6 +61,37 @@ public class GodotAdjust extends GodotPlugin {
 
     @Override
     public View onMainCreate(Activity activity) {
+        // final Activity act = activity;
+        // act.runOnUiThread(new Runnable() {
+        //     @Override
+        //     public void run() {
+
+        //         String appToken = "opp0c2aasagw";
+        //         String environment;
+        //         AdjustConfig config;
+        //         boolean ProductionMode = false;
+
+        //         if (ProductionMode == true) {
+        //             environment = AdjustConfig.ENVIRONMENT_PRODUCTION;
+        //         }
+        //         else {
+        //             environment = AdjustConfig.ENVIRONMENT_SANDBOX;
+        //         }
+                
+        //         config = new AdjustConfig(act.getApplicationContext(), appToken, environment);
+        //         if (ProductionMode == true) {
+        //             config.setLogLevel(LogLevel.SUPRESS);
+        //         }
+        //         else {
+        //             config.setLogLevel(LogLevel.VERBOSE);
+        //         }
+
+        //         Adjust.onCreate(config);
+                
+        //         act.getApplication().registerActivityLifecycleCallbacks(new AdjustLifecycleCallbacks());
+        //         Log.d(TAG,"Adjust plugin inited onCreate");
+        //     }
+        // });
         return null;
     }
 
@@ -86,12 +120,16 @@ public class GodotAdjust extends GodotPlugin {
                     config.setLogLevel(LogLevel.SUPRESS);
                 }
                 else {
-                    config.setLogLevel(LogLevel.WARN);
+                    config.setLogLevel(LogLevel.VERBOSE);
                 }
 
                 Adjust.onCreate(config);
+                Adjust.onResume();
                 
                 getActivity().getApplication().registerActivityLifecycleCallbacks(new AdjustLifecycleCallbacks());
+
+
+                Log.d(TAG,"Adjust plugin inited on Java");
             }
         });
     }
@@ -136,24 +174,20 @@ public class GodotAdjust extends GodotPlugin {
         //...
      }
     
-    // public void track_event(final String event, final Dictionary params)
-    // {
-    //     AppsFlyerLib.getInstance().logEvent(getActivity(), event, params);
-    // }
+    public void track_event(final String event, final Dictionary params)
+    {
+        AdjustEvent adjustEvent = new AdjustEvent(event);
+        Adjust.trackEvent(adjustEvent);
+    }
 
-    // public void set_uninstall_token(final String token)
-    // {
-    // }
 
-    // public void track_revenue(final String revenue, final String currency, final String signature, final String originalJson, final String public_key)
-    // {
-    //     AppsFlyerLib.getInstance().validateAndLogInAppPurchase(getActivity(), public_key, signature, originalJson, revenue, currency, null);
-    // }
+    public void track_revenue(final String revenue, final String currency, final String signature, final String originalJson, final String public_key)
+    {
+        AdjustEvent adjustEvent = new AdjustEvent(signature);
+        adjustEvent.setRevenue(Double.parseDouble(revenue), currency);
+        Adjust.trackEvent(adjustEvent);
+    }
 
-    // public String appsflyer_id()
-    // {
-    //     return AppsFlyerLib.getInstance().getAppsFlyerUID(getActivity());
-    // }
 
     // Internal methods
 
