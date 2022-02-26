@@ -1,0 +1,11 @@
+[config]
+
+name="GodotAdjust"
+binary_type="local"
+binary="GodotAdjust.release.aar"
+
+[dependencies]
+
+local=[]
+remote=["com.adjust.sdk:adjust-android:4.28.4"]
+custom_maven_repos=["https://dl.bintray.com/mobilap/maven/"]
